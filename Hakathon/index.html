@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    .navbar { font-size: 1.2rem; } /* Increase Navbar Text Size */
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-white shadow py-4">
+    <div class="container-fluid">
+      <a class="navbar-brand text-primary fs-4" href="#">HealthCare</a> <!-- Larger Font -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link text-primary fs-5" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-primary fs-5" data-bs-toggle="modal" data-bs-target="#loginModal" href="#">All Doctors</a></li>
+          <li class="nav-item"><a class="nav-link fs-5" href="#">About</a></li>
+        </ul>
+
+        <!-- Create Account Button (Triggers Login & Signup Popups) -->
+        <div class="d-flex">
+          <button class="btn btn-primary fs-5 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+          <button class="btn btn-success fs-5" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="text-content">
+        <h1>Book Appointment With Trusted Doctors</h1>
+        <p>Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free.</p>
+        <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#loginModal">Book appointment →</a>
+    </div>
+    <div class="image-content">
+        <img src="img.jpg" alt="Doctors">
+    </div>
+</div>
+
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="login.jsp" method="POST">
+            <div class="mb-3">
+              <label>Email</label>
+              <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label>Password</label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign Up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="signup.jsp" method="POST">
+          <div class="mb-3">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" required>
+          </div>
+          <div class="mb-3">
+            <label>Role</label>
+            <select class="form-control" name="role" required>
+              <option value="Patient">Patient</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Function to check URL for signup success
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has("signup") && urlParams.get("signup") === "success") {
+            alert("Signup successful! Please login.");
+        }
+    };
+</script>
+</body>
+</html>

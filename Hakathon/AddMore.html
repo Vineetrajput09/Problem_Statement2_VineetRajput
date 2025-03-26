@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .form {
+           
+        font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+    }
+
+    .container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-top: 50px;
+    }
+    .container form label {
+        text-align: left;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="form">
+        <div class="container">
+            <h1>Disease Input Form</h1>
+            <form action="after.jsp" method="post">
+                <label for="name">Disease Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="symptoms1">Symptom1:</label>
+                <input type="text" id="symptoms1" name="symtom1">
+
+                <label for="symptoms2">Symptom2:</label>
+                <input type="text" id="symptoms2" name="symtom2">
+
+                <label for="symptoms3">Symptom3:</label>
+                <input type="text" id="symptoms3" name="symtom3">
+
+                <label for="medicine">medicines</label>
+                <input type="text" id="medicine" name="medicine">
+
+                <label for="treatment">Treatment:</label>
+                <input type="text" id="treatment" name="treatment">
+
+                <label for="note">Note</label>
+                <input type="text" id="note" name="note">
+
+                <button type="submit">Submit</button>
+                <button type="submit"><a href="diseases.jsp" style="color: white; text-decoration: none;">Back</a></button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
